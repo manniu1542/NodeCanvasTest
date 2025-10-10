@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeCanvas", "NodeCanvas.csproj", "{5b05acb7-890e-1c76-0594-61c5ffffba10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadoxNotion", "ParadoxNotion.csproj", "{f1f3a7a7-a6d7-ccb6-39a2-b1baef9c6ea9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{a29fb445-a5f2-72e5-a5a3-8cf94912f51c}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5b05acb7-890e-1c76-0594-61c5ffffba10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5b05acb7-890e-1c76-0594-61c5ffffba10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f1f3a7a7-a6d7-ccb6-39a2-b1baef9c6ea9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f1f3a7a7-a6d7-ccb6-39a2-b1baef9c6ea9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a29fb445-a5f2-72e5-a5a3-8cf94912f51c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a29fb445-a5f2-72e5-a5a3-8cf94912f51c}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
