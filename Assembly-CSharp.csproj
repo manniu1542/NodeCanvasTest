@@ -45,8 +45,57 @@
     <Analyzer Include="H:\UnityAllVersion\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NPBehave-master\Scripts\Task\Task.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleHelloWorldAI.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Operator.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Failer.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Inverter.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Condition.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\BlackboardCondition.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Blackboard.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleNavMoveToEnemy.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\BlackboardQuery.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\ReusableSubtrees\EnemyB.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Composite\Sequence.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Cooldown.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleMouseController.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Root.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\WaitForCondition.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\ObservingDecorator.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Debugger.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Node.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Composite\RandomSelector.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Exception.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleHelloBlackboardsAI.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Service.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Observer.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleSwarmEnemyAI.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\TimeMax.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Task\Action.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\TimeMin.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Composite\RandomSequence.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleEnemyAI.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Task\Wait.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Clock.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Succeeder.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Random.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\ReusableSubtrees\NodeFactory.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Composite\Parallel.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Repeater.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Decorator\Decorator.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\ReusableSubtrees\EnemyA.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Composite\Composite.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Composite\Selector.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Stops.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Container.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\UnityContext.cs" />
+    <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleClockThrottling.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Task\NavMoveTo.cs" />
+    <Compile Include="Assets\NPBehave-master\Scripts\Task\WaitUntilStopped.cs" />
     <Compile Include="Assets\Scripts\Tmp.cs" />
     <None Include="Assets\Res\Frank_Fighting_Pack\Documentation\Motion_List.txt" />
+    <None Include="Assets\NPBehave-master\LICENSE.txt" />
+    <None Include="Assets\NPBehave-master\README.txt" />
     <Reference Include="UnityEngine">
       <HintPath>H:\UnityAllVersion\2022.3.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -695,6 +744,9 @@
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
@@ -767,6 +819,9 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Updater">
+      <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
@@ -788,17 +843,27 @@
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+      <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+      <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>H:\UnityProgram\NodeCanvasTest\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{d7414154-bb77-413b-da59-6805900a0faa}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="ParadoxNotion.csproj">
       <Project>{f1f3a7a7-a6d7-ccb6-39a2-b1baef9c6ea9}</Project>
       <Name>ParadoxNotion</Name>

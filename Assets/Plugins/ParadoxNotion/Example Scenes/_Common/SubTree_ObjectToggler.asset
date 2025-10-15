@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: SubTree_ObjectToggler
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":683.0,"y":155.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"targetList":{"_name":"DisableList","_targetVariableID":"ae5831ce-6945-4683-8854-31c6786d8a7c"},"current":{"_type":"UnityEngine.GameObject","_name":"ElementDisable","_targetVariableID":"ba154e73-3b4e-4b9c-b64f-6ffeaac0353c"},"storeIndex":{"_name":""},"maxIteration":{"_value":-1},"_position":{"x":525.0,"y":303.0},"$type":"NodeCanvas.BehaviourTrees.Iterator","$id":"1"},{"_action":{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_name":"ElementDisable","_targetVariableID":"ba154e73-3b4e-4b9c-b64f-6ffeaac0353c"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},"_position":{"x":507.0,"y":435.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"targetList":{"_name":"EnableList","_targetVariableID":"32659f76-36e6-4016-b9ea-fbd9f5557588"},"current":{"_type":"UnityEngine.GameObject","_name":"ElementEnable","_targetVariableID":"bd1fa4ce-2872-46c5-8016-2fbef4469db4"},"storeIndex":{"_name":""},"maxIteration":{"_value":-1},"_position":{"x":772.0,"y":303.0},"$type":"NodeCanvas.BehaviourTrees.Iterator","$id":"3"},{"_action":{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_name":"ElementEnable","_targetVariableID":"bd1fa4ce-2872-46c5-8016-2fbef4469db4"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},"_position":{"x":763.0,"y":438.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[{"name":"Note","rect":{"xMin":508.0,"yMin":506.0,"xMax":938.0,"yMax":658.0},"color":{"r":1.0,"g":0.9215686,"b":0.01568628,"a":0.9},"notes":"This
+    behaviour tree is used in the FSM ''Topic - GUI Menu'' example, where\neach state
+    of the FSM is using this SubTree, but where each state\noverrides the exposed
+    variables of the tree to disable/enable different objects\naccording to the state.\n\nThis
+    tree is used more like a visual scripting approach rather than performing\na
+    behaviour (that behaviour trees are best suited for). However this showcases\ntheir
+    flexibility in different use cases."}],"localBlackboard":{"_variables":{"Exposed
+    Variables":{"_value":{},"_name":"Exposed Variables","_id":"efd61e19-a582-4f80-b285-b658c244f8e9","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"EnableList":{"_name":"EnableList","_id":"32659f76-36e6-4016-b9ea-fbd9f5557588","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"DisableList":{"_name":"DisableList","_id":"ae5831ce-6945-4683-8854-31c6786d8a7c","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"These
+    are used in the iterators":{"_value":{},"_name":"These are used in the iterators","_id":"828cc91a-d2a0-4f2d-bc55-550497cebc61","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ElementEnable":{"_name":"ElementEnable","_id":"bd1fa4ce-2872-46c5-8016-2fbef4469db4","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ElementDisable":{"_name":"ElementDisable","_id":"ba154e73-3b4e-4b9c-b64f-6ffeaac0353c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 2025.1
+    _category: 
+    _comments: Enables a collection of objects, and disables another collection of
+      objects.
+    _translation: {x: 320, y: 41}
+    _zoomFactor: 1
+  _haltSerialization: 0
+  _externalSerializationFile: {fileID: 0}
