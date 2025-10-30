@@ -57,6 +57,7 @@ namespace RPGCore.AI.HFSM
 
 		public virtual void BeginTransition()
 		{
+			
 		}
 
 		public bool ShouldTransition()

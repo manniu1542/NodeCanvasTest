@@ -93,8 +93,11 @@ namespace RPGCore.AI.HFSM
 			{
 				scriptController.executor = executor;
 				scriptController.gameObject = executor.gameObject;
+				//从配置数据中获取参数
 				scriptController.PrepareParameters(parameters);
+				//状态机的初始化
 				scriptController.Init();
+				//该状态机的构造
 				return scriptController.ConstructStateMachine();
 			}
 			return null;

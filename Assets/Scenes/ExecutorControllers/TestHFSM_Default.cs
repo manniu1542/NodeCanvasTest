@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using RPGCore.AI.HFSM;
 using RPGCore.Animation;
 using UnityEngine;
@@ -28,13 +29,11 @@ public partial class TestHFSM : StateMachineScriptController
     [Service("battle_free/BattleFreeUpdate")]
     private void on_BattleFreeUpdate_service(Service service, ServiceExecuteType type)
     {
-      
         if (Input.GetKeyDown(KeyCode.N))
         {
-           
             SetBool("IsBattale", false);
         }
- 
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             SetBool("IsRun", true);
@@ -53,9 +52,27 @@ public partial class TestHFSM : StateMachineScriptController
         }
     }
 
+   
+
     [Service("Root/PlayerMoveInput")]
     private void on_PlayerMoveInput_service(Service service, ServiceExecuteType type)
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            //记录当前的 状态记录。
+            
+            executor.SaveStateSnapshot(0);
+            Debug.Log("保存数据了！");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            executor.RestoreStateSnapshot(0);
+     
+            Debug.Log("还原数据了！");
+        }
+
+
         Vector2 v = inputPlayer.FindAction("UI/Navigate").ReadValue<Vector2>();
         SetBool("IsWalk", v != Vector2.zero);
         SetBool("IsIdle", v == Vector2.zero);
@@ -89,7 +106,6 @@ public partial class TestHFSM : StateMachineScriptController
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-           
             SetBool("IsBattale", true);
         }
     }
@@ -116,10 +132,10 @@ public partial class TestHFSM : StateMachineScriptController
     {
         if (type == StateExecuteType.OnEnter)
         {
-            
-            animationPlayer.RequestLayerTransition("walkN","foot");
+            animationPlayer.RequestLayerTransition("walkN", "foot");
             // animationPlayer.RequestTransition("walkN");
         }
+
         if (type == StateExecuteType.OnExit)
         {
             animationPlayer.ExitLayerAnimation();

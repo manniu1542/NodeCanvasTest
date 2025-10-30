@@ -9,60 +9,62 @@ using UnityEngine;
 /// <typeparam name="TValue"></typeparam>
 public class RingStack<TValue> : RingArray<TValue>
 {
-	//栈顶位置
-	private int topIndex;
+    //栈顶位置
+    private int topIndex;
 
-	public RingStack(int stackLength) : base(stackLength)
-	{
-		topIndex = 0;
-	}
+    public RingStack(int stackLength) : base(stackLength)
+    {
+        topIndex = 0;
+    }
 
-	/// <summary>
-	/// 返回栈顶项
-	/// </summary>
-	/// <returns></returns>
-	public TValue Peek()
-	{
-		if (isEmpty(topIndex)) return default(TValue);
-		return datas[topIndex];
-	}
+    /// <summary>
+    /// 返回栈顶项
+    /// </summary>
+    /// <returns></returns>
+    public TValue Peek()
+    {
+        if (isEmpty(topIndex)) return default(TValue);
+        return datas[topIndex];
+    }
 
-	/// <summary>
-	/// 弹出栈顶项
-	/// </summary>
-	/// <returns></returns>
-	public TValue Pop()
-	{
-		if (isEmpty(topIndex)) return default(TValue);
-		TValue temp = datas[topIndex];
-		MarkEmpty(topIndex, true);
-		topIndex -= 1;
-		if (topIndex < 0)
-		{
-			topIndex = length - 1;
-		}
-		return temp;
-	}
+    /// <summary>
+    /// 弹出栈顶项
+    /// </summary>
+    /// <returns></returns>
+    public TValue Pop()
+    {
+        if (isEmpty(topIndex)) return default(TValue);
+        TValue temp = datas[topIndex];
+        MarkEmpty(topIndex, true);
+        topIndex -= 1;
+        if (topIndex < 0)
+        {
+            topIndex = length - 1;
+        }
 
-	/// <summary>
-	/// 在栈顶压入一项
-	/// </summary>
-	/// <param name="value"></param>
-	public void Push(TValue value)
-	{
-		topIndex += 1;
-		if (topIndex == length)
-		{
-			topIndex = 0;
-		}
-		datas[topIndex] = value;
-		MarkEmpty(topIndex, false);
-	}
+        return temp;
+    }
 
-	public override bool isEmpty()
-	{
-		return isEmpty(topIndex);
-	}
+    /// <summary>
+    /// 在栈顶压入一项
+    /// </summary>
+    /// <param name="value"></param>
+    public void Push(TValue value)
+    {
+        topIndex += 1;
+        if (topIndex == length)
+        {
+            topIndex = 0;
+        }
+
+        datas[topIndex] = value;
+        MarkEmpty(topIndex, false);
+    }
+
+    public override bool isEmpty()
+    {
+        return isEmpty(topIndex);
+    }
 }
 
 /// <summary>
@@ -71,74 +73,77 @@ public class RingStack<TValue> : RingArray<TValue>
 /// <typeparam name="TValue"></typeparam>
 public class RingQueue<TValue> : RingArray<TValue>
 {
-	//队头位置
-	protected int headIndex = 0;
+    //队头位置
+    protected int headIndex = 0;
 
-	//队尾位置
-	protected int tailIndex = 0;
+    //队尾位置
+    protected int tailIndex = 0;
 
-	public RingQueue(int length) : base(length)
-	{
-		headIndex = length - 1;
-		tailIndex = length - 1;
-	}
+    public RingQueue(int length) : base(length)
+    {
+        headIndex = length - 1;
+        tailIndex = length - 1;
+    }
 
-	/// <summary>
-	/// 返回队头元素
-	/// </summary>
-	/// <returns></returns>
-	public TValue Peek()
-	{
-		if (isEmpty(headIndex)) return default(TValue);
-		return datas[headIndex];
-	}
+    /// <summary>
+    /// 返回队头元素
+    /// </summary>
+    /// <returns></returns>
+    public TValue Peek()
+    {
+        if (isEmpty(headIndex)) return default(TValue);
+        return datas[headIndex];
+    }
 
-	/// <summary>
-	/// 出队 返回队头并删除
-	/// </summary>
-	/// <returns></returns>
-	public TValue Dequeue()
-	{
-		if (isEmpty(headIndex)) return default(TValue);
-		TValue temp = datas[headIndex];
-		MarkEmpty(headIndex, true);
-		headIndex -= 1;
-		if (headIndex < 0)
-		{
-			headIndex = length - 1;
-		}
-		if (headIndex < tailIndex)
-		{
-			headIndex = tailIndex;
-		}
-		return temp;
-	}
+    /// <summary>
+    /// 出队 返回队头并删除
+    /// </summary>
+    /// <returns></returns>
+    public TValue Dequeue()
+    {
+        if (isEmpty(headIndex)) return default(TValue);
+        TValue temp = datas[headIndex];
+        MarkEmpty(headIndex, true);
+        headIndex -= 1;
+        if (headIndex < 0)
+        {
+            headIndex = length - 1;
+        }
 
-	/// <summary>
-	/// 入队 添加到队尾
-	/// </summary>
-	/// <param name="value"></param>
-	/// <returns></returns>
-	public void Enqueue(TValue value)
-	{
-		datas[tailIndex] = value;
-		MarkEmpty(tailIndex, false);
-		int pretail = tailIndex;
-		tailIndex -= 1;
-		if (tailIndex < 0)
-		{
-			tailIndex = length - 1;
-		}
-		if (tailIndex == headIndex)
-		{
-			tailIndex = pretail;
-		}
-	}
+        if (headIndex < tailIndex)
+        {
+            headIndex = tailIndex;
+        }
 
-	public override bool isEmpty()
-	{
-		return headIndex == tailIndex;
-	}
+        return temp;
+    }
+
+    /// <summary>
+    /// 入队 添加到队尾
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    public void Enqueue(TValue value)
+    {
+        datas[tailIndex] = value;
+        MarkEmpty(tailIndex, false);
+        int pretail = tailIndex;
+        tailIndex -= 1;
+        if (tailIndex < 0)
+        {
+            tailIndex = length - 1;
+        }
+
+        if (tailIndex == headIndex)
+        {
+            tailIndex = pretail;
+        }
+    }
+
+    public override bool isEmpty()
+    {
+        return headIndex == tailIndex;
+    }
 }
 
 /// <summary>
@@ -147,41 +152,43 @@ public class RingQueue<TValue> : RingArray<TValue>
 /// <typeparam name="TValue"></typeparam>
 public class RingQueueEx<TValue> : RingQueue<TValue>
 {
-	public RingQueueEx(int length) : base(length)
-	{
-	}
+    public RingQueueEx(int length) : base(length)
+    {
+    }
 
-	/// <summary>
-	/// 返回队尾元素但不删除
-	/// </summary>
-	/// <returns></returns>
-	public TValue PeekTail()
-	{
-		if (headIndex == tailIndex) return default(TValue);
-		var newtail = tailIndex + 1;
-		if (newtail == length)
-		{
-			newtail = 0;
-		}
-		return datas[newtail];
-	}
+    /// <summary>
+    /// 返回队尾元素但不删除
+    /// </summary>
+    /// <returns></returns>
+    public TValue PeekTail()
+    {
+        if (headIndex == tailIndex) return default(TValue);
+        var newtail = tailIndex + 1;
+        if (newtail == length)
+        {
+            newtail = 0;
+        }
 
-	/// <summary>
-	/// 返回队尾元素并删除
-	/// </summary>
-	/// <returns></returns>
-	public TValue PopTail()
-	{
-		if (headIndex == tailIndex) return default(TValue);
-		var newtail = tailIndex + 1;
-		if (newtail == length)
-		{
-			newtail = 0;
-		}
-		tailIndex = newtail;
-		MarkEmpty(newtail, true);
-		return datas[newtail];
-	}
+        return datas[newtail];
+    }
+
+    /// <summary>
+    /// 返回队尾元素并删除
+    /// </summary>
+    /// <returns></returns>
+    public TValue PopTail()
+    {
+        if (headIndex == tailIndex) return default(TValue);
+        var newtail = tailIndex + 1;
+        if (newtail == length)
+        {
+            newtail = 0;
+        }
+
+        tailIndex = newtail;
+        MarkEmpty(newtail, true);
+        return datas[newtail];
+    }
 }
 
 /// <summary>
@@ -190,67 +197,82 @@ public class RingQueueEx<TValue> : RingQueue<TValue>
 /// <typeparam name="TValue"></typeparam>
 public abstract class RingArray<TValue>
 {
-	//数据
-	protected TValue[] datas;
+    //数据
+    protected TValue[] datas;
 
-	//数组长度
-	protected int length;
+    //数组长度
+    protected int length;
 
-	public int Size => length;
+    public int Size => length;
 
-	public int Length
-	{
-		get
-		{
-			int count = 0;
-			for (int i = 0; i < length; i++)
-			{
-				if (!isEmpty(i)) count++;
-			}
-			return count;
-		}
-	}
+    public int Length
+    {
+        get
+        {
+            int count = 0;
+            for (int i = 0; i < length; i++)
+            {
+                if (!isEmpty(i)) count++;
+            }
 
-	protected bool[] isEmptyMark;
+            return count;
+        }
+    }
 
-	public RingArray(int length)
-	{
-		this.length = length;
-		this.datas = new TValue[length];
-		this.isEmptyMark = new bool[length];
-		for (int i = 0; i < length; i++)
-		{
-			isEmptyMark[i] = true;
-		}
-	}
+    protected bool[] isEmptyMark;
 
-	protected void MarkEmpty(int position, bool mark)
-	{
-		if (position < 0 && position >= length) return;
-		isEmptyMark[position] = mark;
-	}
+    public RingArray(int length)
+    {
+        this.length = length;
+        this.datas = new TValue[length];
+        this.isEmptyMark = new bool[length];
+        for (int i = 0; i < length; i++)
+        {
+            isEmptyMark[i] = true;
+        }
+    }
 
-	protected bool isEmpty(int position)
-	{
-		if (position < 0 && position >= length) return false;
-		return isEmptyMark[position];
-	}
+    protected void MarkEmpty(int position, bool mark)
+    {
+        if (position < 0 && position >= length) return;
+        isEmptyMark[position] = mark;
+    }
 
-	public virtual bool isEmpty()
-	{
-		for (int i = 0; i < length; i++)
-		{
-			if (isEmptyMark[i]) return true;
-		}
-		return false;
-	}
+    protected bool isEmpty(int position)
+    {
+        if (position < 0 && position >= length) return false;
+        return isEmptyMark[position];
+    }
 
-	public void Clear()
-	{
-		for (int i = 0; i < length; i++)
-		{
-			datas[i] = default(TValue);
-			isEmptyMark[i] = true;
-		}
-	}
+    public virtual bool isEmpty()
+    {
+        for (int i = 0; i < length; i++)
+        {
+            if (isEmptyMark[i]) return true;
+        }
+
+        return false;
+    }
+
+    public void Clear()
+    {
+        for (int i = 0; i < length; i++)
+        {
+            datas[i] = default(TValue);
+            isEmptyMark[i] = true;
+        }
+    }
+
+    public TValue[] ToArray()
+    {
+        TValue[] array = new TValue[Length];
+        for (int i = 0, j = 0; i < length; i++)
+            if (!isEmptyMark[i])
+            {
+                array[j] = datas[i];
+                j++;
+            }
+
+        return array;
+    }
 }
