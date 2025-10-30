@@ -103,8 +103,8 @@
     <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Nodes\SubDialogueTree.cs" />
     <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Tasks\Actions\Blackboard\List Specific\PickListElement.cs" />
     <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\DebugCondition.cs" />
-    <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Tasks\Actions\GameObject\InstantiateGameObject.cs" />
     <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Tasks\Actions\GameObject\RemoveComponent.cs" />
+    <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Tasks\Actions\GameObject\InstantiateGameObject.cs" />
     <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\DialogueEventArguments.cs" />
     <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Tasks\Conditions\GameObject\IsWithinLayerMask.cs" />
     <Compile Include="Assets\Plugins\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Nodes\MultipleConditionNode.cs" />

@@ -1,0 +1,836 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36b0e81b71c3614186d837935272b3b, type: 3}
+  m_Name: TestHFSM
+  m_EditorClassIdentifier: 
+  realScriptControllerName: TestHFSM
+  parameters:
+  - m_name: IsIdle
+    m_type: 2
+    baseValue: 0
+  - m_name: IsWalk
+    m_type: 2
+    baseValue: 0
+  - m_name: tgrTalk
+    m_type: 3
+    baseValue: 0
+  - m_name: tgrHit
+    m_type: 3
+    baseValue: 0
+  - m_name: IsBattale
+    m_type: 2
+    baseValue: 0
+  - m_name: tgrRoll
+    m_type: 3
+    baseValue: 0
+  - m_name: IsRun
+    m_type: 2
+    baseValue: 0
+  - m_name: IsTarget
+    m_type: 2
+    baseValue: 0
+  states:
+  - position:
+      serializedVersion: 2
+      x: 876.66693
+      y: 407.33334
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: n_idle
+    stateType: 0
+    isDefault: 1
+    description: 
+    isTemporary: 0
+    canExitHandle: 0
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 863.3332
+      y: 767.3337
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: n_walk
+    stateType: 0
+    isDefault: 0
+    description: 
+    isTemporary: 0
+    canExitHandle: 0
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 893.33276
+      y: 77.33332
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: n_talk
+    stateType: 0
+    isDefault: 0
+    description: 
+    isTemporary: 1
+    canExitHandle: 1
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 833.33344
+      y: 50.999996
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: g_hit
+    stateType: 0
+    isDefault: 0
+    description: 
+    isTemporary: 1
+    canExitHandle: 1
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 862.167
+      y: 399.50006
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: free_idle
+    stateType: 0
+    isDefault: 1
+    description: 
+    isTemporary: 0
+    canExitHandle: 0
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 435.50058
+      y: 729.4997
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: free_walk
+    stateType: 0
+    isDefault: 0
+    description: 
+    isTemporary: 0
+    canExitHandle: 0
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 1368.8342
+      y: 726.1664
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: free_run
+    stateType: 0
+    isDefault: 0
+    description: 
+    isTemporary: 0
+    canExitHandle: 0
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 875.4999
+      y: 1082.8335
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: free_roll
+    stateType: 0
+    isDefault: 0
+    description: 
+    isTemporary: 0
+    canExitHandle: 1
+    canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 987.16644
+      y: 389.5
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: test
+    stateType: 0
+    isDefault: 1
+    description: 
+    isTemporary: 0
+    canExitHandle: 0
+    canExitDescription: 
+  stateMachines:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    isExecuting: 0
+    independentGenerate: 0
+    id: Root
+    stateType: 1
+    isDefault: 0
+    description: 
+    isRoot: 1
+    childStates:
+    - normal
+    - g_hit
+    - battale
+    defaultState: normal
+    transitions:
+    - d89a4fd5db82fb548b0919ed37af7273
+    - e84e95d0225b68f40bf64d229c8ac17f
+    - 89d3b32185d4d744d8021065d59914aa
+    services:
+    - id: PlayerMoveInput
+      serviceType: 0
+      customInterval: 0
+      description: 
+    - id: CheckHit
+      serviceType: 0
+      customInterval: 0
+      description: 
+    any:
+      position:
+        serializedVersion: 2
+        x: -3.3333328
+        y: 63.333332
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Any
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+    entry:
+      position:
+        serializedVersion: 2
+        x: -3.3333333
+        y: 400
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Entry
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 855.5557
+      y: 399.55563
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: normal
+    stateType: 1
+    isDefault: 1
+    description: 
+    isRoot: 0
+    childStates:
+    - n_idle
+    - n_walk
+    - n_talk
+    defaultState: n_idle
+    transitions:
+    - fecafe5ba6e5085449842fce2d355515
+    - b261a8d74d27252498f85d12c3e28a9a
+    - 6f7484463914adb42a01f0790e3679ff
+    services:
+    - id: NormalLogicUpdate
+      serviceType: 0
+      customInterval: 0
+      description: 
+    any:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Any
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+    entry:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Entry
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 858.83307
+      y: 706.1666
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: battale
+    stateType: 1
+    isDefault: 0
+    description: 
+    isRoot: 0
+    childStates:
+    - battle_free
+    - battle_target
+    defaultState: battle_free
+    transitions:
+    - fea3e6fe746df234aa11616e20af2d88
+    - 00fa0e2db4d379b4191be3b5d5028a9b
+    services: []
+    any:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Any
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+    entry:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Entry
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 892.16705
+      y: 389.5001
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: battle_free
+    stateType: 1
+    isDefault: 1
+    description: 
+    isRoot: 0
+    childStates:
+    - free_idle
+    - free_walk
+    - free_run
+    - free_roll
+    defaultState: free_idle
+    transitions:
+    - e818f0edaf994da409c83f69f5ec5af7
+    - 2644a0aba5d61524a8e7747bb391e6f3
+    - 62a49563cdc43a045a92c3a2a50e4589
+    - d053dd2a804851b44bc2db5382b980a8
+    - 4860e6cd34533814bb49980d458b8636
+    - 27ae609ee39f142489b7463d84e30037
+    - 6a03c8725b8b3e648880d683478fa883
+    - 83d55fce061eb3043a2e8e009e44da1d
+    - c928c88fc84c58b4690b55915ab79196
+    - 57ba3624b176eec458a2e048945450dc
+    services:
+    - id: BattleFreeUpdate
+      serviceType: 0
+      customInterval: 0
+      description: 
+    any:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Any
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+    entry:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Entry
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+  - position:
+      serializedVersion: 2
+      x: 898.8329
+      y: 686.16644
+      width: 480
+      height: 90
+    isExecuting: 0
+    independentGenerate: 0
+    id: battle_target
+    stateType: 1
+    isDefault: 0
+    description: 
+    isRoot: 0
+    childStates:
+    - test
+    defaultState: test
+    transitions: []
+    services: []
+    any:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Any
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+    entry:
+      position:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 480
+        height: 90
+      isExecuting: 0
+      independentGenerate: 0
+      id: Entry
+      stateType: 0
+      isDefault: 0
+      description: 
+      isTemporary: 0
+      canExitHandle: 0
+      canExitDescription: 
+  transitions:
+  - id: fecafe5ba6e5085449842fce2d355515
+    from: n_idle
+    to: n_walk
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsWalk
+      compareType: 2
+      compareValue: 1
+  - id: b261a8d74d27252498f85d12c3e28a9a
+    from: n_walk
+    to: n_idle
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 1
+  - id: 6f7484463914adb42a01f0790e3679ff
+    from: Any
+    to: n_talk
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: tgrTalk
+      compareType: 2
+      compareValue: 0
+  - id: abe7ebcd434297547bc73aaaedc0979e
+    from: Any
+    to: g_hit
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: tgrHit
+      compareType: 2
+      compareValue: 0
+  - id: d89a4fd5db82fb548b0919ed37af7273
+    from: Any
+    to: g_hit
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: tgrHit
+      compareType: 2
+      compareValue: 0
+  - id: e84e95d0225b68f40bf64d229c8ac17f
+    from: normal
+    to: battale
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsBattale
+      compareType: 2
+      compareValue: 1
+  - id: 89d3b32185d4d744d8021065d59914aa
+    from: battale
+    to: normal
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsBattale
+      compareType: 2
+      compareValue: 0
+  - id: e818f0edaf994da409c83f69f5ec5af7
+    from: free_idle
+    to: free_walk
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 0
+    - parameterName: IsWalk
+      compareType: 2
+      compareValue: 1
+  - id: 2644a0aba5d61524a8e7747bb391e6f3
+    from: free_walk
+    to: free_idle
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 1
+  - id: 62a49563cdc43a045a92c3a2a50e4589
+    from: free_walk
+    to: free_run
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsRun
+      compareType: 2
+      compareValue: 1
+  - id: d053dd2a804851b44bc2db5382b980a8
+    from: free_run
+    to: free_walk
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 0
+    - parameterName: IsWalk
+      compareType: 2
+      compareValue: 1
+    - parameterName: IsRun
+      compareType: 2
+      compareValue: 0
+  - id: 4860e6cd34533814bb49980d458b8636
+    from: free_run
+    to: free_idle
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 1
+  - id: 27ae609ee39f142489b7463d84e30037
+    from: free_roll
+    to: free_idle
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 1
+  - id: 6a03c8725b8b3e648880d683478fa883
+    from: free_walk
+    to: free_roll
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: tgrRoll
+      compareType: 2
+      compareValue: 0
+  - id: 83d55fce061eb3043a2e8e009e44da1d
+    from: free_roll
+    to: free_walk
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsWalk
+      compareType: 2
+      compareValue: 1
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 0
+    - parameterName: IsRun
+      compareType: 2
+      compareValue: 0
+  - id: c928c88fc84c58b4690b55915ab79196
+    from: free_roll
+    to: free_run
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsIdle
+      compareType: 2
+      compareValue: 0
+    - parameterName: IsWalk
+      compareType: 2
+      compareValue: 1
+    - parameterName: IsRun
+      compareType: 2
+      compareValue: 1
+  - id: 57ba3624b176eec458a2e048945450dc
+    from: free_run
+    to: free_roll
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: tgrRoll
+      compareType: 2
+      compareValue: 0
+  - id: fea3e6fe746df234aa11616e20af2d88
+    from: battle_free
+    to: battle_target
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsTarget
+      compareType: 2
+      compareValue: 1
+  - id: 00fa0e2db4d379b4191be3b5d5028a9b
+    from: battle_target
+    to: battle_free
+    baseConditionsName: []
+    parameterConditionDatas:
+    - parameterName: IsTarget
+      compareType: 2
+      compareValue: 0
+  methodBlocks:
+  - methodType: 0
+    targetName: g_hit
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"g_hit\")]\n"
+    methodHeadLine: "\tprivate void on_g_hit_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\t\t\tDebug.Log(\"Walk
+      \u5207\u6362\u7C7B\u578B--\"+type);\n\t\t\tanimationPlayer.RequestTransition(\"hit\");\n\t\t\n\t\t}\n\t\t\n"
+    linePosition: 92
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: n_walk
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"n_walk\")]\n"
+    methodHeadLine: "\tprivate void on_n_walk_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\n\t\t\tanimationPlayer.RequestTransition(\"walkN\");\n\t\t\n\t\t}\n\t\n"
+    linePosition: 109
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: n_idle
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"n_idle\")]\n"
+    methodHeadLine: "\tprivate void on_n_idle_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\n\t\t\tanimationPlayer.RequestTransition(\"idleN\");\n\t\t\n\t\t}\n"
+    linePosition: 121
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: n_talk
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"n_talk\")]\n"
+    methodHeadLine: "\tprivate void on_n_talk_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\t\n\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\t\n\t\t\tanimationPlayer.RequestTransition(\"talkN\");\n\t\t\n\t\t}\n\t\t\n"
+    linePosition: 132
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 2
+    targetName: n_talk
+    targetDescription: 
+    methodAttributeLine: "\t[CanExit(\"n_talk\")]\n"
+    methodHeadLine: "\tprivate bool can_n_talk_exit(State state)\n"
+    methodBodyLines: "\t\treturn animationPlayer.CurrentFinishPlaying;\n"
+    linePosition: 0
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 2
+    targetName: g_hit
+    targetDescription: 
+    methodAttributeLine: "\t[CanExit(\"g_hit\")]\n"
+    methodHeadLine: "\tprivate bool can_g_hit_exit(State state)\n"
+    methodBodyLines: "\t\treturn animationPlayer.CurrentFinishPlaying;\n"
+    linePosition: 0
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 1
+    targetName: battle_free/BattleFreeUpdate
+    targetDescription: 
+    methodAttributeLine: "\t[Service(\"battle_free/BattleFreeUpdate\")]\n"
+    methodHeadLine: "\tprivate void on_BattleFreeUpdate_service(Service service,
+      ServiceExecuteType type)\n"
+    methodBodyLines: "\t\n\t\tif (Input.GetKeyDown(KeyCode.LeftShift))\n\t\t{\n\t\t\tSetBool(\"IsRun\",true);\n\t\t}\n\t\tif
+      (Input.GetKeyUp(KeyCode.LeftShift))\n\t\t{\n\t\t\tSetBool(\"IsRun\",false);\n\t\t}\n\t\tif
+      (Input.GetKeyDown(KeyCode.G))\n\t\t{\n\t\t\tSetTrigger(\"tgrRoll\");\n\t\t}\n"
+    linePosition: 29
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: free_idle
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"free_idle\")]\n"
+    methodHeadLine: "\tprivate void on_free_idle_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\t\n\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\t\t\tDebug.Log(\"free_idle
+      \u72B6\u6001\u5207\u6362--\"+type);\n\t\t\tanimationPlayer.RequestTransition(\"free_idle\");\n\t\t}\n"
+    linePosition: 150
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: free_walk
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"free_walk\")]\n"
+    methodHeadLine: "\tprivate void on_free_walk_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\t\t\tanimationPlayer.RequestTransition(\"free_walk\");\n\t\t}\n"
+    linePosition: 161
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: free_run
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"free_run\")]\n"
+    methodHeadLine: "\tprivate void on_free_run_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\t\t\tanimationPlayer.RequestTransition(\"free_run\");\n\t\t}\n"
+    linePosition: 170
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: free_roll
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"free_roll\")]\n"
+    methodHeadLine: "\tprivate void on_free_roll_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: "\t\tif (type == StateExecuteType.OnEnter)\n\t\t{\n\t\t\tanimationPlayer.RequestTransition(\"free_roll\");\n\t\t}\n"
+    linePosition: 179
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 0
+    targetName: test
+    targetDescription: 
+    methodAttributeLine: "\t[State(\"test\")]\n"
+    methodHeadLine: "\tprivate void on_test_execute(State state, StateExecuteType
+      type)\n"
+    methodBodyLines: 
+    linePosition: 193
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 1
+    targetName: Root/PlayerMoveInput
+    targetDescription: 
+    methodAttributeLine: "\t[Service(\"Root/PlayerMoveInput\")]\n"
+    methodHeadLine: "\tprivate void on_PlayerMoveInput_service(Service service, ServiceExecuteType
+      type)\n"
+    methodBodyLines: "\t\t\n\t\n\t\tVector2 v = inputPlayer.FindAction(\"UI/Navigate\").ReadValue<Vector2>();\n\t\tSetBool(\"IsWalk\",
+      v != Vector2.zero);\n\t\tSetBool(\"IsIdle\", v == Vector2.zero);\n        \n\t\tif
+      (v != Vector2.zero)\n\t\t{\n\t\t\tv = v.normalized;\n            \n\t\t\tgameObject.transform.forward
+      = Vector3.Lerp(gameObject.transform.forward, new Vector3(v.x, 0, v.y), Time.deltaTime
+      * 10f);\n\t\t}\n"
+    linePosition: 47
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 1
+    targetName: Root/CheckHit
+    targetDescription: 
+    methodAttributeLine: "\t[Service(\"Root/CheckHit\")]\n"
+    methodHeadLine: "\tprivate void on_CheckHit_service(Service service, ServiceExecuteType
+      type)\n"
+    methodBodyLines: "\t\tif (receiveAnimationEventHandler.beAttack)\n\t\t{\n\t\t\treceiveAnimationEventHandler.beAttack
+      = false;\n\t\t\tSetTrigger(\"tgrHit\");\n\t\t\t\n\t\t}\n"
+    linePosition: 64
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 1
+    targetName: normal/NormalLogicUpdate
+    targetDescription: 
+    methodAttributeLine: "\t[Service(\"normal/NormalLogicUpdate\")]\n"
+    methodHeadLine: "\tprivate void on_NormalLogicUpdate_service(Service service,
+      ServiceExecuteType type)\n"
+    methodBodyLines: "\t\n\t\tif (Input.GetKeyDown(KeyCode.T))\n\t\t{\n\t\t\tSetTrigger(\"tgrTalk\");\n\t\t}\n\n\t\tif
+      (Input.GetKeyDown(KeyCode.B))\n\t\t{\n\t\t\tSetBool(\"IsBattale\",true);\n\t\t}\n\n"
+    linePosition: 75
+    independentGenerate: 0
+    isDeleted: 0
+  - methodType: 2
+    targetName: free_roll
+    targetDescription: 
+    methodAttributeLine: "\t[CanExit(\"free_roll\")]\n"
+    methodHeadLine: "\tprivate bool can_free_roll_exit(State state)\n"
+    methodBodyLines: "\t\treturn false;\n"
+    linePosition: 0
+    independentGenerate: 0
+    isDeleted: 0
+  beforeMethod: "\nusing RPGCore.AI.HFSM;\nusing RPGCore.Animation;\nusing UnityEngine;\nusing
+    UnityEngine.InputSystem;\nusing UnityEngine.InputSystem.UI;\n\npublic partial
+    class TestHFSM : StateMachineScriptController\n{\n    private AnimationPlayerManager
+    animationPlayer;\n    public InputActionAsset inputPlayer;\n    ReceiveAnimationEventHandler
+    receiveAnimationEventHandler;\n\n    public override void Init()\n    {\n       
+    var uiInputModule = GameObject.Find(\"EventSystem\").GetComponent<InputSystemUIInputModule>();\n       
+    inputPlayer = uiInputModule.actionsAsset;\n\n\n        animationPlayer = gameObject.GetComponent<AnimationPlayerManager>();\n       
+    receiveAnimationEventHandler = gameObject.GetComponent<ReceiveAnimationEventHandler>();\n   
+    }\n\n    //Don't delete or modify the #region & #endregion\n\n    #region Method\n"
+  afterMethod: '    #endregion Method
+
+    }
+
+
+
+'
+  isGenerated: 1
+  controllerConfig:
+    CustomFilePath: 0
+    FilePath: 
+    UseNamespace: 0
+    Namespace: 
+    DisperseGenerate: 0
+    DisperseAll: 0
+  generateFilePath: H:/UnityProgram/NodeCanvasTest/Assets/Scenes/ExecutorControllers/

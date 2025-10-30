@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Assets/Unity-RPGCore-HFSM-main/Editor/GUI/GraphParameterLayer.cs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Assets/Unity-RPGCore-HFSM-main/Example/Scripts/Unity-Simple-Animation-Player/AnimationPlayerManager.cs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Assets/Unity-RPGCore-HFSM-main/Runtime/Controller/StateMachineScriptController.cs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Assets/Unity-RPGCore-HFSM-main/Runtime/Utility/StateMachineHandler.cs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Assets/Unity-RPGCore-HFSM-main/Runtime/Utility/StateMachineHandlerResult.cs" charset="UTF-8" />
+  </component>
+</project>
