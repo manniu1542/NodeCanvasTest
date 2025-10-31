@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public enum ServiceType
 	{
@@ -115,7 +115,7 @@ namespace RPGCore.AI.HFSM
 			Action<Service> service = null,
 			Action<Service> beginService = null,
 			Action<Service> endService = null,
-			ServiceType type = ServiceType.Update, float customInterval = 0f)
+			ServiceType type = ServiceType.Update, long customInterval = 0)
 		{
 			Service _service = m_services.Find(s => s.id.Equals(serviceId));
 			if (_service == null)

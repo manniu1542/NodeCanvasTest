@@ -48,6 +48,7 @@
     <Compile Include="Assets\NPBehave-master\Scripts\Task\Task.cs" />
     <Compile Include="Assets\NPBehave-master\Examples\Scripts\NPBehaveExampleHelloWorldAI.cs" />
     <Compile Include="Assets\Unity-RPGCore-HFSM-main\Runtime\Unit\StateMachine.cs" />
+    <Compile Include="Assets\Unity-RPGCore-HFSM-main\Runtime\Utility\HFSMDataSnapshot.cs" />
     <Compile Include="Assets\Unity-RPGCore-HFSM-main\Example\Scripts\GeneratedScripts\PlayerMovementController_free_view_run.cs" />
     <Compile Include="Assets\Unity-RPGCore-HFSM-main\Runtime\Controller\StateMachineExecutorController.cs" />
     <Compile Include="Assets\NPBehave-master\Scripts\Operator.cs" />

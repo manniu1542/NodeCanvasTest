@@ -1,6 +1,6 @@
 using System;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public class StateMachineHandlerResult
 	{
@@ -291,7 +291,7 @@ namespace RPGCore.AI.HFSM
 		/// <summary>
 		/// 为StateMachine添加Service
 		/// </summary>
-		public StateMachineHandlerResult AddService(string serviceId, ServiceType serviceType = ServiceType.Update, float customInterval = 0f)
+		public StateMachineHandlerResult AddService(string serviceId, ServiceType serviceType = ServiceType.Update, long customInterval = 0)
 		{
 			if (handledState.stateType == StateType.StateMachine)
 			{

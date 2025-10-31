@@ -2,7 +2,7 @@ using DogFramework;
 using UnityEditor;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	[CustomEditor(typeof(StateInspectorHelper))]
 	public class StateInspector : Editor

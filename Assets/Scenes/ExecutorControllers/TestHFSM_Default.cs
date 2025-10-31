@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using RPGCore.AI.HFSM;
+using ZHFSM;
 using RPGCore.Animation;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -52,7 +52,7 @@ public partial class TestHFSM : StateMachineScriptController
         }
     }
 
-   
+    private HFSMDataSnapshot tmp;
 
     [Service("Root/PlayerMoveInput")]
     private void on_PlayerMoveInput_service(Service service, ServiceExecuteType type)
@@ -60,15 +60,13 @@ public partial class TestHFSM : StateMachineScriptController
         if (Input.GetKeyDown(KeyCode.M))
         {
             //记录当前的 状态记录。
-            
-            executor.SaveStateSnapshot(0);
+            tmp = HFSMDataSnapshotHelper.GetSnapshot(executor);
             Debug.Log("保存数据了！");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            executor.RestoreStateSnapshot(0);
-     
+            HFSMDataSnapshotHelper.SetSnapshot(executor, tmp);
             Debug.Log("还原数据了！");
         }
 

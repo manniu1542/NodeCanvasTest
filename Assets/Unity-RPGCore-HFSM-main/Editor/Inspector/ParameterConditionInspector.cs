@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public abstract class ParameterConditionInspector
 	{

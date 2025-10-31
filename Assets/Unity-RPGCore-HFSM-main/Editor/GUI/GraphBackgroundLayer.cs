@@ -2,7 +2,7 @@ using DogFramework.EditorExtension;
 using UnityEditor;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public class GraphBackgroundLayer : GraphLayer
 	{

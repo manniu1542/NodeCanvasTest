@@ -1,9 +1,9 @@
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public interface ITimer
 	{
-		float Elapsed
+		long Elapsed
 		{
 			get;
 		}

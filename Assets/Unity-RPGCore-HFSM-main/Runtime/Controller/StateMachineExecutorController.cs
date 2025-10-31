@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	/// <summary>
 	/// 状态机Controller;不用做运行时
@@ -142,7 +142,7 @@ namespace RPGCore.AI.HFSM
 			generateString.AppendLine("			.EndHandle();");
 			generateString.AppendLine("		return StateMachineHandler.EndStateMachine();");
 			string constructScript =
-			"using RPGCore.AI.HFSM;\n" +
+			"using ZHFSM;\n" +
 			"//Automatically generated code\n" +
 			$"[StateMachineController(ControllerName = \"{realScriptControllerName}\")]\n" +
 			$"public partial class {realScriptControllerName} : StateMachineScriptController\n" +
@@ -293,7 +293,7 @@ namespace RPGCore.AI.HFSM
 				}
 				//后根据MethodBlocks中的信息生成脚本文件
 				beforeMethod =
-					"using RPGCore.AI.HFSM;\n" +
+					"using ZHFSM;\n" +
 					"using UnityEngine;\n" +
 					$"public partial class {realScriptControllerName} : StateMachineScriptController\n" +
 					"{\n" +
@@ -454,7 +454,7 @@ namespace RPGCore.AI.HFSM
 			StringBuilder builder = new StringBuilder();
 			byte[] byteArray;
 			builder.Append(
-					"using RPGCore.AI.HFSM;\n" +
+					"using ZHFSM;\n" +
 					"using UnityEngine;\n" +
 					$"public partial class {realScriptControllerName} : StateMachineScriptController\n" +
 					"{\n"+

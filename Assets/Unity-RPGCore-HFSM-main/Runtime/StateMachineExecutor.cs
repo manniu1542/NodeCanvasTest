@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
     public class StateMachineExecutor : MonoBehaviour
     {
@@ -32,7 +32,7 @@ namespace RPGCore.AI.HFSM
 
         private State m_currentExecuteState = null;
 
-        //记录State执行历史 最大记录8个
+        //记录State执行历史 最大记录8个  (临时状态可以回退的到的状态)
         private RingStack<StateBundle> m_executeStateHistory = new RingStack<StateBundle>(8);
 
 
@@ -144,7 +144,6 @@ namespace RPGCore.AI.HFSM
                         }
                     }
                 }
-
                 //尝试临时状态是否执行转换
                 if (bundle.state.stateType == StateType.State && (bundle.state as State).isTemporary)
                 {
@@ -214,7 +213,7 @@ namespace RPGCore.AI.HFSM
         /// <summary>
         /// 根据传入的State填充执行状态栈
         /// </summary>
-        private void FillExecuteStateStack(StateBase state)
+        public void FillExecuteStateStack(StateBase state)
         {
             //找到该层级状态机下，具体可执行的默认状态
             while (state.stateType == StateType.StateMachine)
@@ -250,50 +249,7 @@ namespace RPGCore.AI.HFSM
 
    
 
-        #region 快照
-        //参数
-        public float[] arrParameters;
-        //当前状态
-        public State currentExecuteStateSnapphoto;
-        
-        /// <summary>
-        /// 保存当前状态机状态到快照
-        /// </summary>
-        /// <param name="snapshotName">快照名称</param>
-        public void SaveStateSnapshot(int frameIdx)
-        {
-            var parameters = scriptController.parameters.ToList();
-            arrParameters = new float[parameters.Count];
-            for (int i = 0; i < parameters.Count; i++)
-            {
-                arrParameters[i] = parameters[i].Value.baseValue;
-            }
-            //TODO:保存 当前的 状态机 层级，以及当前所在的状态机，以及这个状态所经过的时间 存储
-
-            currentExecuteStateSnapphoto = currentExecuteState;
-            Debug.Log( "保存数据了！");;
-        }
-
-        /// <summary>
-        /// 从快照恢复状态机状态
-        /// </summary>
-        /// <param name="snapshotName">快照名称</param>
-        /// <returns>是否成功恢复</returns>
-        public void RestoreStateSnapshot(int frameIdx)
-        {
-            var parameters = scriptController.parameters.ToList();
-            for (int i = 0; i < arrParameters.Length; i++)
-            {
-                parameters[i].Value.baseValue = arrParameters[i];
-            }
-            //TODO:恢复 当前的 状态机 层级，以及当前所在的状态机，以及这个状态所经过的时间 恢复
-           
-            
-            FillExecuteStateStack(currentExecuteStateSnapphoto);
-            Debug.Log( "恢复数据了！");;
-        }
-
-        #endregion
+    
     }
 
     public struct StateBundle
@@ -322,4 +278,8 @@ namespace RPGCore.AI.HFSM
             return null;
         }
     }
+
+ 
+  
+    
 }

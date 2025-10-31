@@ -1,4 +1,4 @@
-using RPGCore.AI.HFSM;
+using ZHFSM;
 using UnityEngine;
 public partial class SimpleHFSMController : StateMachineScriptController
 {

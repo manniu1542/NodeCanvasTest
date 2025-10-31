@@ -1,6 +1,6 @@
 using System;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 	public class StateMachineControllerAttribute : Attribute

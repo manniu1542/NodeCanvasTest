@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public class GraphConst
 	{

@@ -4,7 +4,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public class HFSMEditorWindow : EditorWindow
 	{

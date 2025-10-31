@@ -56,7 +56,7 @@ MonoBehaviour:
     canExitDescription: 
   - position:
       serializedVersion: 2
-      x: 863.3332
+      x: 883.3331
       y: 767.3337
       width: 480
       height: 90
@@ -131,8 +131,8 @@ MonoBehaviour:
     canExitDescription: 
   - position:
       serializedVersion: 2
-      x: 1368.8342
-      y: 726.1664
+      x: 1292.1666
+      y: 729.4997
       width: 480
       height: 90
     isExecuting: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
     canExitDescription: 
   - position:
       serializedVersion: 2
-      x: 875.4999
-      y: 1082.8335
+      x: 852.1667
+      y: 1066.1664
       width: 480
       height: 90
     isExecuting: 0
@@ -206,6 +206,10 @@ MonoBehaviour:
       serviceType: 0
       customInterval: 0
       description: 
+    - id: NewService0
+      serviceType: 2
+      customInterval: 0
+      description: 
     any:
       position:
         serializedVersion: 2
@@ -240,8 +244,8 @@ MonoBehaviour:
       canExitDescription: 
   - position:
       serializedVersion: 2
-      x: 855.5557
-      y: 399.55563
+      x: 822.2222
+      y: 401.77786
       width: 480
       height: 90
     isExecuting: 0
@@ -299,8 +303,8 @@ MonoBehaviour:
       canExitDescription: 
   - position:
       serializedVersion: 2
-      x: 858.83307
-      y: 706.1666
+      x: 821.05524
+      y: 688.3888
       width: 480
       height: 90
     isExecuting: 0
@@ -353,7 +357,7 @@ MonoBehaviour:
   - position:
       serializedVersion: 2
       x: 892.16705
-      y: 389.5001
+      y: 386.16675
       width: 480
       height: 90
     isExecuting: 0
@@ -419,8 +423,8 @@ MonoBehaviour:
       canExitDescription: 
   - position:
       serializedVersion: 2
-      x: 898.8329
-      y: 686.16644
+      x: 885.49945
+      y: 666.16644
       width: 480
       height: 90
     isExecuting: 0

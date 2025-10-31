@@ -1,101 +1,105 @@
 using System;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
-	public class Service
-	{
-		public string id => m_id;
-		private string m_id;
-		public ServiceType serviceType => m_serviceType;
-		private ServiceType m_serviceType;
-		public bool pauseService => m_pauseService;
-		private bool m_pauseService = false;
-		public StateMachine serviceOwner => m_serviceOwner;
-		private StateMachine m_serviceOwner;
+    public class Service
+    {
+        public string id => m_id;
+        private string m_id;
+        public ServiceType serviceType => m_serviceType;
+        private ServiceType m_serviceType;
+        public bool pauseService => m_pauseService;
+        private bool m_pauseService = false;
+        public StateMachine serviceOwner => m_serviceOwner;
+        private StateMachine m_serviceOwner;
 
-		private Action<Service> m_beginService;
-		private Action<Service> m_serviceAction;
-		private Action<Service> m_endService;
-		private Action<Service, ServiceExecuteType> m_executeService;
-		public float customInterval => m_customInterval;
-		private float m_customInterval;
-		public Timer timer;
+        private Action<Service> m_beginService;
+        private Action<Service> m_serviceAction;
+        private Action<Service> m_endService;
+        private Action<Service, ServiceExecuteType> m_executeService;
+        public long customInterval => m_customInterval;
+        private long m_customInterval;
+        public Timer timer;
 
-		public Service(string serviceId,
-			Action<Service> service = null,
-			Action<Service> beginService = null,
-			Action<Service> endService = null,
-			ServiceType type = ServiceType.Update, float customInterval = 0f)
-		{
-			m_id = serviceId;
-			m_serviceType = type;
-			m_beginService = beginService;
-			m_serviceAction = service;
-			m_endService = endService;
-			m_customInterval = customInterval;
-			timer = new Timer();
-		}
+        public Service(string serviceId,
+            Action<Service> service = null,
+            Action<Service> beginService = null,
+            Action<Service> endService = null,
+            ServiceType type = ServiceType.Update, long customInterval = 0)
+        {
+            m_id = serviceId;
+            m_serviceType = type;
+            m_beginService = beginService;
+            m_serviceAction = service;
+            m_endService = endService;
+            m_customInterval =customInterval ;
+            timer = new Timer();
+        }
 
-		public void OnBeginService()
-		{
-			timer.Reset();
-			m_pauseService = false;
-			if (m_beginService != null)
-			{
-				m_beginService.Invoke(this);
-				return;
-			}
-			OnExecuteService(ServiceExecuteType.BeginService);
-		}
+        public void OnBeginService()
+        {
+            timer.Reset();
+            m_pauseService = false;
+            if (m_beginService != null)
+            {
+                m_beginService.Invoke(this);
+                return;
+            }
 
-		public void SetBeginService(Action<Service> action) => m_beginService = action;
+            OnExecuteService(ServiceExecuteType.BeginService);
+        }
 
-		public void OnSercive()
-		{
-			if (m_pauseService) return;
-			if (m_serviceAction != null)
-			{
-				m_serviceAction.Invoke(this);
-				return;
-			}
-			OnExecuteService(ServiceExecuteType.Service);
-		}
+        public void SetBeginService(Action<Service> action) => m_beginService = action;
 
-		public void SetSercive(Action<Service> action) => m_serviceAction = action;
+        public void OnSercive()
+        {
+            if (m_pauseService) return;
+            if (m_serviceAction != null)
+            {
+                m_serviceAction.Invoke(this);
+                return;
+            }
 
-		public void OnEndService()
-		{
-			m_pauseService = false;
-			if (m_endService != null)
-			{
-				m_endService.Invoke(this);
-				return;
-			}
-			OnExecuteService(ServiceExecuteType.EndService);
-		}
+            OnExecuteService(ServiceExecuteType.Service);
+        }
 
-		public void SetEndService(Action<Service> action) => m_endService = action;
+        public void SetSercive(Action<Service> action) => m_serviceAction = action;
 
-		public void OnExecuteService(ServiceExecuteType type) => m_executeService?.Invoke(this, type);
+        public void OnEndService()
+        {
+            m_pauseService = false;
+            if (m_endService != null)
+            {
+                m_endService.Invoke(this);
+                return;
+            }
 
-		public void SetExecuteService(Action<Service, ServiceExecuteType> service) => m_executeService = service;
+            OnExecuteService(ServiceExecuteType.EndService);
+        }
 
-		public void Pause() => m_pauseService = true;
+        public void SetEndService(Action<Service> action) => m_endService = action;
 
-		public void Continue() => m_pauseService = false;
-	}
+        public void OnExecuteService(ServiceExecuteType type) => m_executeService?.Invoke(this, type);
 
-	[Serializable]
-	public class ServiceData
-	{
-		public string id;
+        public void SetExecuteService(Action<Service, ServiceExecuteType> service) => m_executeService = service;
 
-		public ServiceType serviceType = ServiceType.Update;
+        public void Pause() => m_pauseService = true;
 
-		public float customInterval = 0;
+        public void Continue() => m_pauseService = false;
+    }
 
-		[Multiline]
-		public string description;
-	}
+    [Serializable]
+    public class ServiceData
+    {
+        public string id;
+
+        public ServiceType serviceType = ServiceType.Update;
+        /// <summary>
+        /// 单位毫秒
+        /// </summary>
+        public long customInterval = 0;
+
+        [Multiline] public string description;
+    }
 }

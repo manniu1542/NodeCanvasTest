@@ -1,4 +1,4 @@
-using RPGCore.AI.HFSM;
+using ZHFSM;
 //Automatically generated code
 [StateMachineController(ControllerName = "TestHFSM")]
 public partial class TestHFSM : StateMachineScriptController

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	[CustomEditor(typeof(StateMachineExecutorController))]
 	public class StateMachineControllerInspector : Editor

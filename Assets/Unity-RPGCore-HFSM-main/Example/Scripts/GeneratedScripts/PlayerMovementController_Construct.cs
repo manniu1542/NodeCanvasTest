@@ -1,4 +1,4 @@
-using RPGCore.AI.HFSM;
+using ZHFSM;
 //Automatically generated code
 [StateMachineController(ControllerName = "PlayerMovementController")]
 public partial class PlayerMovementController : StateMachineScriptController

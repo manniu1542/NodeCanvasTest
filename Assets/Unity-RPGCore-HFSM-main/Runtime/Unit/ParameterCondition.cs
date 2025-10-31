@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
     public enum CompareType
     {

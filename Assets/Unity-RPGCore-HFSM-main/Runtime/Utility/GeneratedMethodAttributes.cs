@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
 	public class StateAttribute : Attribute

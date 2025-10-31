@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
     /// <summary>
     /// 状态机Controller配置数据

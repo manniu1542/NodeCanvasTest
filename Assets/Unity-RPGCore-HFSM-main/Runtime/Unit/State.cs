@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	public enum StateExecuteType
 	{

@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	[CustomEditor(typeof(TransitionInspectorHelper))]
 	public class TransitionInspector : Editor

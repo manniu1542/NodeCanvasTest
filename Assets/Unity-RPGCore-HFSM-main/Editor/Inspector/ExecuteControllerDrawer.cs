@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace RPGCore.AI.HFSM
+namespace ZHFSM
 {
 	[CustomEditor(typeof(StateMachineExecutor))]
 	public class ExecuteControllerDrawer : Editor
